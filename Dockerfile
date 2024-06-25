@@ -17,5 +17,7 @@ RUN apk update && \
     # kubernetes
     kubectl minio-client \
     && \
+    cp /usr/bin/mcli /usr/bin/mc \
+    && \
     go install github.com/nats-io/natscli/nats@latest && \
     go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
