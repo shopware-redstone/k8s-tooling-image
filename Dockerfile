@@ -5,6 +5,7 @@ RUN echo 'https://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposi
 ENV GOBIN=/bin
 
 COPY --from=bufbuild/buf:1.34 /usr/local/bin/buf /usr/local/bin/buf
+COPY --from=arigaio/atlas:0.25.0-distroless /atlas /usr/local/bin/atlas
 
 RUN apk update && \
     apk add --no-cache \
