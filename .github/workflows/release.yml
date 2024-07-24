@@ -3,14 +3,14 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - latest
+      - '*'
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build:
+  build-and-push:
     permissions:
       contents: read
       packages: write
